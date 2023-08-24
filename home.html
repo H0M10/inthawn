@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="Estilos/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="Estilos/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      /* Estilos para la ventana emergente del carrito */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .carrito-popup {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+          <a class="navbar-brand" href="Home.php">ComponentSpace</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#!">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Login.php">Iniciar sesión</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Registros.html">Registrar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">Categoria</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li class="dropdown-item">HARDWARE</li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#!">Tarjetas de video</a></li>
+                  <li><a class="dropdown-item" href="#!">Tarjetas Madre</a></li>
+                  <li><a class="dropdown-item" href="#!">Procesadores</a></li>
+                  <li><a class="dropdown-item" href="#!">SSD</a></li>
+                  <li><a class="dropdown-item" href="#!">Memoria</a></li>
+                  <li><a class="dropdown-item" href="#!">Fuentes de poder</a></li>
+                  <li><a class="dropdown-item" href="#!">Gabinetes</a></li>
+                  <li><a class="dropdown-item" href="#!">Discos Duros Internos</a></li>
+                  <li><a class="dropdown-item" href="#!">Teclados</a></li>
+                  <li><a class="dropdown-item" href="#!">Mouse</a></li>
+                  <li><a class="dropdown-item" href="#!">Memorias USB</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <button class="btn btn-outline-dark" type="button" onclick="mostrarCarrito()">
+                <i class="bi-cart-fill me-1"></i> Carrito
+                <span class="badge bg-dark text-white ms-1 rounded-pill cart-badge">0</span>
+                <span class="cart-total-price">$0.00</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <!-- Header-->
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">ComponentSpace</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://img.terabyteshop.com.br/produto/g/gabinete-gamer-lian-li-o11-dynamic-hof-full-tower-vidro-temperado-white-s-fonte_91140.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Gabinete</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <h5>$1,100.00</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <button class="btn btn-outline-dark btn-agregar-carrito" type="button" data-nombre="Gabinete" data-precio="1100.00">
+                                <i class="bi-cart-fill me-1"></i> Agregar a carrito
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://storage.googleapis.com/cdn.tanphatad.com/tanphatad/2020/08/ram-pc-ddr3-1gb-cu-5f3a23cc05729-1536x1499.png" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Memoria RAM</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <h5>$799.00</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <button class="btn btn-outline-dark btn-agregar-carrito" type="button" data-nombre="Gabinete" data-precio="799.00">
+                                <i class="bi-cart-fill me-1"></i> Agregar a carrito
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://http2.mlstatic.com/procesador-intel-en-caja-core-i7-6950x-extreme-edition-25m-D_NQ_NP_874743-MLM31914662969_082019-F.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Procesador Intel</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <h5>$6,199.00</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <button class="btn btn-outline-dark btn-agregar-carrito" type="button" data-nombre="Gabinete" data-precio="6,199.00">
+                                <i class="bi-cart-fill me-1"></i> Agregar a carrito
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://www.profesionalreview.com/wp-content/uploads/2017/04/disco-duro-toshiba-8tb.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Disco Duro</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <h5>$1799.00</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <button class="btn btn-outline-dark btn-agregar-carrito" type="button" data-nombre="Gabinete" data-precio="1799.00">
+                                <i class="bi-cart-fill me-1"></i> Agregar a carrito
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://imagenes.coolmod.com/tarjeta-grafica-gigabyte-geforce-gtx-1050-oc-2gb-gddr5-reacondicionado-002.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Tarjeta de video</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <h5>$8,499.00</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <button class="btn btn-outline-dark btn-agregar-carrito" type="button" data-nombre="Gabinete" data-precio="8,499.00">
+                                <i class="bi-cart-fill me-1"></i> Agregar a carrito
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://www.hd-tecnologia.com/imagenes/articulos/2017/09/MSI-anuncia-la-disponibilidad-de-la-placa-madre-X370-GAMING-M7-ACK-3.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Placa Madre</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <h5>$3,699.00</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <button class="btn btn-outline-dark btn-agregar-carrito" type="button" data-nombre="Gabinete" data-precio="3,699.00">
+                                <i class="bi-cart-fill me-1"></i> Agregar a carrito
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Sale badge-->
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/71tlwJ-olsL._SL1500_.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Teclado Gamer</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <h5>$969.00<h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <button class="btn btn-outline-dark btn-agregar-carrito" type="button" data-nombre="Gabinete" data-precio="969.00">
+                                <i class="bi-cart-fill me-1"></i> Agregar a carrito
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://zahcomputers.pk/wp-content/uploads/2020/09/Razer-Basilisk-FPS-Gaming-Mouse.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Mouse Gamimg</h5>
+                                <!-- Product reviews-->
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                                <!-- Product price-->
+                                <h5>$769.00</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <button class="btn btn-outline-dark btn-agregar-carrito" type="button" data-nombre="Gabinete" data-precio="769.00">
+                                <i class="bi-cart-fill me-1"></i> Agregar a carrito
+                              </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <!-- ...contenido existente... -->
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script>
+        // Array para almacenar los productos en el carrito
+        const carrito = [];
+        const cartBadge = document.querySelector('.cart-badge');
+        const cartTotalPrice = document.querySelector('.cart-total');
+    
+        // Función para agregar productos al carrito
+        function agregarAlCarrito(nombreProducto, precioProducto) {
+          carrito.push({ nombre: nombreProducto, precio: precioProducto });
+          actualizarCarrito();
+        }
+    
+        // Función para actualizar el contenido del carrito en la barra de navegación
+        function actualizarCarrito() {
+          let totalPrecio = 0;
+          carrito.forEach((producto) => {
+            totalPrecio += producto.precio;
+          });
+          cartBadge.textContent = carrito.length;
+          cartTotalPrice.textContent = "$" + totalPrecio.toFixed(2);
+        }
+    
+        // Función para mostrar los productos en el carrito en una ventana emergente
+        function mostrarCarrito() {
+          const carritoPopup = document.createElement("div");
+          carritoPopup.classList.add("carrito-popup");
+    
+          if (carrito.length === 0) {
+            carritoPopup.textContent = "El carrito está vacío.";
+          } else {
+            const listaProductos = document.createElement("ul");
+    
+            carrito.forEach((producto) => {
+              const itemProducto = document.createElement("li");
+              itemProducto.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)}`;
+              listaProductos.appendChild(itemProducto);
+            });
+    
+            carritoPopup.appendChild(listaProductos);
+          }
+    
+          const overlay = document.createElement("div");
+          overlay.classList.add("overlay");
+          overlay.appendChild(carritoPopup);
+    
+          document.body.appendChild(overlay);
+    
+          // Event listener para cerrar la ventana emergente al hacer clic fuera de ella
+          overlay.addEventListener("click", function (evento) {
+            if (evento.target === overlay) {
+              overlay.remove();
+            }
+          });
+        }
+    
+        // Event listener para el botón "Agregar a carrito" de cada producto
+        document.querySelectorAll('.btn-agregar-carrito').forEach((boton) => {
+          boton.addEventListener('click', (evento) => {
+            const nombreProducto = boton.dataset.nombre;
+            const precioProducto = parseFloat(boton.dataset.precio);
+            agregarAlCarrito(nombreProducto, precioProducto);
+          });
+        });
+      </script>
+      <!-- Bootstrap core JS-->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Core theme JS-->
+      <script src="js/scripts.js"></script>
+      
+</body>
+</html>

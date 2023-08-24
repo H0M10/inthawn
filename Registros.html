@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="Estilos/Registro.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <form action="SeguridadRegistros.php" method="POST" onsubmit="return validarFormulario(event)">
+        <h3>Registro</h3>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Nombre" id="nombre" name="nombre" required>
+        <p id="errorNombre" class="error-message"></p>
+
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" placeholder="Correo" id="correo" name="correo" required>
+        <p id="errorCorreo" class="error-message"></p>
+
+        <label for="cuenta">Nombre de Usuario</label>
+        <input type="text" placeholder="Nombre de usuario" id="cuenta" name="cuenta" required>
+        <p id="errorCuenta" class="error-message"></p>
+
+        <label for="contraseña">Contraseña</label>
+        <input type="password" placeholder="Contraseña" id="contraseña" name="contraseña" required>
+        <p id="errorContrasena" class="error-message"></p>
+
+        <label for="telefono">Teléfono</label>
+        <input type="text" placeholder="Teléfono" id="telefono" name="telefono" required>
+        <p id="errorTelefono" class="error-message"></p>
+
+        <label for="direccion">Direccion</label>
+        <input type="text" placeholder="Direccion" id="direccion" name="direccion" required>
+        <p id="errorDireccion" class="error-message"></p>
+
+        <label for="genero">Género</label>
+        <select id="genero" name="genero">
+            <option value="H">Hombre</option>
+            <option value="M">Mujer</option>
+            <option value="O">Otro</option>
+        </select>
+        <p id="errorGenero" class="error-message"></p>
+
+        <button type="submit" class="register-button">Registrar</button>
+    </form>
+
+    <!-- Aquí irá el script de validación que te proporcioné anteriormente -->
+
+
+
+    <script>
+        function validarFormulario(event) {
+            event.preventDefault();
+
+            //Valida si la contraseña cumple todos los requisitos que se mencionan
+            var contrasena = document.getElementById("contraseña").value;
+            var tieneMayuscula = /[A-Z]/.test(contrasena);
+            var tieneMinuscula = /[a-z]/.test(contrasena);
+            var tieneNumero = /[0-9]/.test(contrasena);
+            var errorEncontrado = false;
+
+            if (contrasena.length < 8) {
+                mostrarError("errorContrasena", "La contraseña debe tener al menos 8 caracteres.");
+                errorEncontrado = true;
+            }
+
+            if (!tieneMayuscula) {
+                mostrarError("errorContrasena", "La contraseña debe contener al menos una letra mayúscula.");
+                errorEncontrado = true;
+            }
+
+            if (!tieneMinuscula) {
+                mostrarError("errorContrasena", "La contraseña debe contener al menos una letra minúscula.");
+                errorEncontrado = true;
+            }
+
+            if (!tieneNumero) {
+                mostrarError("errorContrasena", "La contraseña debe contener al menos un número.");
+                errorEncontrado = true;
+            }
+
+            //Valida si hay algo en las casillas
+            var nombre = document.getElementById("nombre").value;
+            var cuenta = document.getElementById("cuenta").value;
+            var correo = document.getElementById("correo").value;
+            var telefono = document.getElementById("telefono").value;
+            var genero = document.getElementById("genero").value;
+
+            if (nombre.trim() === "") {
+                mostrarError("errorNombre", "Ingrese su nombre.");
+                errorEncontrado = true;
+            }
+
+            if (cuenta.trim() === "") {
+                mostrarError("errorCuenta", "Ingrese un nombre de usuario.");
+                errorEncontrado = true;
+            }
+
+            if (correo.trim() === "") {
+                mostrarError("errorCorreo", "Ingrese su correo electrónico.");
+                errorEncontrado = true;
+            }
+
+            if (telefono.trim() === "") {
+                mostrarError("errorTelefono", "Ingrese su número de teléfono.");
+                errorEncontrado = true;
+            }
+
+            if (telefono.trim() === "") {
+                mostrarError("errorDireccion", "Ingrese su dirección.");
+                errorEncontrado = true;
+            }
+
+            if (genero.trim() === "") {
+                mostrarError("errorGenero", "Seleccione su género.");
+                errorEncontrado = true;
+            }
+
+            if (errorEncontrado) {
+                return false;
+            }
+            
+            // Aquí puedes realizar el registro o enviar el formulario
+            event.target.submit();
+
+            // Mostrar mensaje de éxito como una alerta
+            alert("Registro exitoso. ¡Bienvenido!");
+            return false;
+        }
+
+        // Sirve para mostrar el error, en este caso se agrega en cada casilla para que muestre el error asignado en cada uno
+        function mostrarError(elementId, errorMessage) {
+            var errorElement = document.getElementById(elementId);
+            errorElement.textContent = errorMessage;
+        }
+
+        // Si ya no hay ningun error borra el mensaje de error
+        function borrarError(elementId) {
+            var errorElement = document.getElementById(elementId);
+            errorElement.textContent = "";
+        }
+
+        document.querySelector('.login-button').addEventListener('click', function() {
+            window.location.href = 'login.php';
+        });
+    </script>
+</body>
+</html>

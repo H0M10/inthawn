@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+body {
+  background: url("https://articles-img.sftcdn.net/t_articles/auto-mapping-folder/sites/2/2023/03/fondo-aesthetic-cielo-noche.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  flex-direction: column;
+  padding: 20px;
+  color: rgb(155, 92, 92);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: none;
+}
+
+.navbar h1 {
+  color: rgb(255, 255, 255);
+}
+
+.sidebar {
+  width: 250px;
+  background: rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+  backdrop-filter: blur(30px);
+  border-radius: 15px;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.content {
+  background: linear-gradient(180deg, #ffffff, #b4d8f7);
+  transition: 0.3s ease;
+  backdrop-filter: blur(30px);
+  border-radius: 15px;
+  padding: 20px;
+  flex-grow: 1;
+  color: black;
+  overflow: auto; /* Agrega una barra de desplazamiento cuando el contenido exceda el tamaño */
+  max-height: 70vh; /* Establece una altura máxima para el recuadro de contenido */
+}
+
+.content h1,
+.content h2,
+.content p {
+  margin-top: 0; /* Asegura que los títulos y párrafos no tengan margen superior */
+}
+
+
+
+
+h1,
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+table {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+  backdrop-filter: blur(30px);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Estilos adicionales */
+
+.content {
+  width: calc(100% - 250px);
+  transition: 0.3s ease;
+}
+
+/* Estilos generales */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Estilos del contenido dinámico */
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(30px);
+}
+
+/* Estilos de la barra lateral */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(30px);
+  color: white;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebar-nav li {
+  margin-bottom: 10px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  padding: 10px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-nav li a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Otros estilos específicos del contenido */
+
+/* Estilos de la tabla de categorías */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+table th {
+  background-color: rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Estilos específicos de Admin Dashboard */
+
+.admin-dashboard {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+}
+
+/* Estilos específicos de Gestionar Categorías */
+
+.gestionar-categorias {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+}

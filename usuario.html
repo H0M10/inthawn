@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - ComponentSpace</title>
+    <link rel="stylesheet" href="Estilos/usuario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ComponentSpace</div>
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="archivo_carrito.html">Carrito</a></li>
+                <li><a href="usuario.html">Mi Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="user-profile">
+        <div class="container">
+            <h2>Mi Cuenta</h2>
+            <div class="profile-details">
+                <div class="profile-picture">
+                    <img src="https://th.bing.com/th/id/OIP.2FaYewaD6yMKm27DWrhYIgHaHa?pid=ImgDet&rs=1" alt="Foto de Perfil">
+                </div>
+                <div class="profile-info">
+                    <h3>Nombre de Usuario</h3>
+                    <p>Correo Electrónico: usuario@example.com</p>
+                    <p>Teléfono: 1234567890</p>
+                    <p>Dirección: Ciudad, País</p>
+                    <a href="#" class="btn edit-profile">Editar Perfil</a>
+                </div>
+            </div>
+            <div class="order-history">
+                <h3>Historial de Pedidos</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pedido</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#001</td>
+                            <td>01/01/2023</td>
+                            <td>$99.99</td>
+                            <td>Pendiente</td>
+                        </tr>
+                        <tr>
+                            <td>#002</td>
+                            <td>02/01/2023</td>
+                            <td>$149.99</td>
+                            <td>Entregado</td>
+                        </tr>
+                        <tr>
+                            <td>#003</td>
+                            <td>03/01/2023</td>
+                            <td>$199.99</td>
+                            <td>En Proceso</td>
+                        </tr>
+                        <!-- Agrega más filas si es necesario -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 ComponentSpace. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
